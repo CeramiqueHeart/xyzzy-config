@@ -1,0 +1,21 @@
+; change default directory
+(set-default-directory (concat (si:getenv "USERPROFILE") "\\Desktop"))
+
+; Change default buffer mode
+(setq *default-buffer-mode* 'text-mode)
+
+; enable incremental search
+(require "isearch")
+
+; key config
+(define-key ctl-x-map #\C-u 'undo)
+(global-set-key #\C-o 'toggle-ime)
+(global-set-key #\C-z 'undo)
+
+; for text-mode
+;(define-key *text-mode-map* #\RET 'newline-and-indent)
+
+; for ruby-mode
+;(load-library "ruby-mode")
+;(push '("\\.rb$" . ruby-mode) *auto-mode-alist*)
+;(add-hook '*ruby-mode-hook* #'(lambda () (set-tab-columns 4 (selected-buffer))))
